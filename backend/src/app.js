@@ -17,7 +17,7 @@ const { checkError, generateToken } = require('./middlewares/csrf');
 
 const sessionOptions = session({
     secret: 'BX253JORVU',
-    store: mongoStore.create({ mongoUrl: process.env.connectionString }),
+    store: mongoStore.create({ mongoUrl: process.env.CONNECTION_STRING }),
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -27,7 +27,7 @@ const sessionOptions = session({
 
 });
 
-mongoose.connect(process.env.connectionString)
+mongoose.connect(process.env.CONNECTION_STRING)
     .then(() => app.emit('ok'))
     .catch(e => console.log(e));
 
