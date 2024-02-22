@@ -16,7 +16,7 @@ const csrf = require('csurf');
 const { checkError, generateToken } = require('./middlewares/csrf');
 
 const sessionOptions = session({
-    secret: 'BX253JORVU',
+    secret: process.env.SESSION_SECRET,
     store: mongoStore.create({ mongoUrl: process.env.CONNECTION_STRING }),
     resave: false,
     saveUninitialized: false,
