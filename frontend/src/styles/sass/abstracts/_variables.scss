@@ -1,0 +1,20 @@
+:root {
+    /* Colors */
+        --clr-primary-100: hsla(202, 25%, 12%, 1);
+        --clr-primary-200: hsla(185, 61%, 61%, 1);
+        --clr-primary-300: hsla(180, 96%, 22%, 1);
+        --clr-primary-400: hsla(174, 96%, 38%, 1);
+        --clr-primary-500: hsla(168, 96%, 38%, 1);
+
+        --clr-ntrl-min: hsla(0, 0%, 100%, 1);
+        --clr-ntrl-max: hsla(0, 0%, 0%, 1);
+    /* Fonts */
+        --fs-xsm: 1.2rem;
+        --fs-sm: 1.4rem;
+        --fs-base: 1.6rem;
+        --fs-md: 2rem;
+        --fs-lg: 2.4rem;
+        --fs-xl: 2.8rem;
+
+        --ff-primary: "Montserrat", sans-serif;
+}
