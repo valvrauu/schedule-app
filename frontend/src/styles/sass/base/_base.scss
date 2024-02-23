@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-size: var(--fs-sm);
+    font-family: var(--ff-primary);
+
+    @include mq(sm) { font-size: var(--fs-base); }
+    @include mq(lg) { font-size: var(--fs-md); }
+}
