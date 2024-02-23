@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    color: var(--clr-ntrl-min);
+    background: var(--clr-primary-100);
+
+    padding: 1.5rem;
+
+    @include mq(sm) { padding: 2rem; }
+    @include mq(lg) { padding: 3rem; }
+}

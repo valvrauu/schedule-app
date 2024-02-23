@@ -1,0 +1,9 @@
+.logo {
+    color: inherit;
+
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-decoration: none;
+
+    @include mq(sm) { font-size: var(--fs-md); }
+}

@@ -15,6 +15,8 @@ const csrf = require('csurf');
 
 const { checkError, generateToken } = require('./middlewares/csrf');
 
+const home_routes = require('./routes/home');
+
 const sessionOptions = session({
     secret: process.env.SESSION_SECRET,
     store: mongoStore.create({ mongoUrl: process.env.CONNECTION_STRING }),
@@ -57,6 +59,9 @@ app.use(helmet());
 app.use(csrf());
 app.use(checkError);
 app.use(generateToken);
+
+// Routes
+app.use(home_routes);
 
 app.on('ok', () => {
     app.listen(port, () => {

@@ -1,0 +1,25 @@
+.block-intro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include mq(sm) { gap: 6rem; }
+    @include mq(lg) { gap: 8rem; }
+
+    &__content {
+        display: grid;
+        gap: .5rem;
+
+        text-align: center;
+    }
+
+    &__box-img {
+        max-width: 60rem;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+}
