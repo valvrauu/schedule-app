@@ -1,0 +1,7 @@
+.primary-title {
+    font-size: var(--fs-md);
+    font-weight: 700;
+
+    @include mq(sm) { font-size: var(--fs-lg); }
+    @include mq(lg) { font-size: var(--fs-xl); }
+}
