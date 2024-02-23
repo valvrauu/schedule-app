@@ -1,0 +1,19 @@
+$xsm: 36em;
+$sm: 48em;
+$md: 62em;
+$lg: 75em;
+$xl: 87.5em;
+
+@mixin mq($size) {
+    @if      $size == xsm { @media only screen and (min-width: $xsm) { @content; } }
+    @else if $size == sm { @media only screen and (min-width: $sm) { @content; } }
+    @else if $size == md { @media only screen and (min-width: $md) { @content; } }
+    @else if $size == lg { @media only screen and (min-width: $lg) { @content; } }
+    @else if $size == xl { @media only screen and (min-width: $xl) { @content; } }
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
