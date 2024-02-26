@@ -17,6 +17,7 @@ const { checkError, generateToken } = require('./middlewares/csrf');
 const { alerts } = require('./middlewares/flash');
 
 const home_routes = require('./routes/home');
+const signup_routes = require('./routes/signup');
 
 const sessionOptions = session({
     secret: process.env.SESSION_SECRET,
@@ -64,6 +65,7 @@ app.use(generateToken);
 
 // Routes
 app.use(home_routes);
+app.use(signup_routes);
 
 app.on('ok', () => {
     app.listen(port, () => {
