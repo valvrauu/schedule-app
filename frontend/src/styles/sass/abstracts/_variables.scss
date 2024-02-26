@@ -7,7 +7,11 @@
         --clr-primary-500: hsla(168, 96%, 38%, 1);
 
         --clr-ntrl-min: hsla(0, 0%, 100%, 1);
+        --clr-ntrl-mid: hsla(0, 0%, 50%, 1);
         --clr-ntrl-max: hsla(0, 0%, 0%, 1);
+
+        --clr-error: hsl(0, 100%, 50%, 1);
+        --clr-sucess: hsl(120, 100%, 50%, 1);
     /* Fonts */
         --fs-xsm: 1.2rem;
         --fs-sm: 1.4rem;

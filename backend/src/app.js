@@ -14,8 +14,10 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 
 const { checkError, generateToken } = require('./middlewares/csrf');
+const { alerts } = require('./middlewares/flash');
 
 const home_routes = require('./routes/home');
+const signup_routes = require('./routes/signup');
 
 const sessionOptions = session({
     secret: process.env.SESSION_SECRET,
@@ -51,6 +53,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Flash messages
 app.use(flash());
+app.use(alerts);
 
 // Helmet protection
 app.use(helmet());
@@ -62,6 +65,7 @@ app.use(generateToken);
 
 // Routes
 app.use(home_routes);
+app.use(signup_routes);
 
 app.on('ok', () => {
     app.listen(port, () => {

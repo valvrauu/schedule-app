@@ -5,11 +5,15 @@
 @import 'base/base';
 @import 'base/typography';
 
+@import 'components/btn';
+@import 'components/form';
 @import 'components/logo';
 
 @import 'layout/header';
 @import 'layout/nav';
 @import 'layout/main';
 @import 'layout/block-intro';
+@import 'layout/block-signup';
 
 @import 'pages/home';
+@import 'pages/signup';

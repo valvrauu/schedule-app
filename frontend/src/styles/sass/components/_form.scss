@@ -1,0 +1,46 @@
+.form {
+    display: grid;
+    gap: 1rem;
+
+    @include mq(sm) { gap: 1.5rem; }
+
+    &__group {
+        display: grid;
+        gap: .5rem;
+    }
+
+    &__label {
+        font-size: var(--fs-sm);
+        font-weight: 500;
+
+        @include mq(sm) { font-size: var(--fs-base); }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--clr-ntrl-mid);
+
+        overflow: hidden;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__alert {
+        font-size: var(--fs-sm);
+
+        &--sucess {
+            color: var(--clr-sucess);
+        }
+
+        &--error {
+            color: var(--clr-error);
+            &::after { content: '*'; }
+        }
+    }
+
+    &__btn {
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+}
