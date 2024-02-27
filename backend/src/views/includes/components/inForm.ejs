@@ -1,0 +1,49 @@
+<form action="/signin/submit" method="post" autocomplete="on" class="form" id="signinForm">
+    <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+
+    <div class="form__group">
+        <label for="email" class="form__label">Email</label>
+
+        <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            class="form__input" 
+            autocomplete="email" 
+            placeholder=".e.g John@gmail.com" 
+            required
+        >
+
+        <% if(alerts.email) { %>
+            <% alerts.email.forEach(err => { %>
+                <div class="form__alert form__alert--error">
+                    <%- err %>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
+
+    <div class="form__group">
+        <label for="password" class="form__label">Password</label>
+
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            class="form__input" 
+            autocomplete="new-password" 
+            minlength="8" 
+            required
+        >
+
+        <% if(alerts.password) { %>
+            <% alerts.password.forEach(err => { %>
+                <div class="form__alert form__alert--error">
+                    <%- err %>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
+
+    <button class="btn btn--primary form__btn">Submit</button>
+</form>
