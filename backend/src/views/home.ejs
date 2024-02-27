@@ -8,7 +8,11 @@
         <%- include('includes/components/header'); %>
 
         <main class="main">
-            <%- include('includes/layout/block-intro'); %>
+            <% if(!user) { %>
+                <%- include('includes/layout/block-intro'); %>
+            <% } else { %>
+                <p> Welcome, <%- user.email %>! </p>
+            <% } %>
         </main>
 
         <script src="js/bundle.js"></script>
