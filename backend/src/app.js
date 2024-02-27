@@ -14,7 +14,7 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 
 const { checkError, generateToken } = require('./middlewares/csrf');
-const { alerts } = require('./middlewares/flash');
+const { alerts, user } = require('./middlewares/flash');
 
 const home_routes = require('./routes/home');
 const signup_routes = require('./routes/signup');
@@ -54,6 +54,7 @@ app.use(express.urlencoded({ extended: true }));
 // Flash messages
 app.use(flash());
 app.use(alerts);
+app.use(user);
 
 // Helmet protection
 app.use(helmet());
