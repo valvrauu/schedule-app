@@ -1,6 +1,11 @@
 const { SignUpClass } = require('../models/signup');
 
 module.exports.index = (req, res, next) => {
+    if(req.session.user) {
+        res.redirect('/');
+        return;
+    }
+
     res.render('signup');
     return;
 }
