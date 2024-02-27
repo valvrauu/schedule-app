@@ -1,0 +1,45 @@
+.block-signin {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    max-width: 40rem;
+    width: 100%;
+
+    @include mq(sm) { 
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse; 
+        gap: 5rem;
+
+        max-width: 80rem;
+    }
+
+    @include mq(lg) {
+        gap: 10rem;
+        max-width: 100rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+    }
+
+    &__primary-title {
+        text-align: center;
+    }
+
+    &__box-img {
+        display: none;
+        flex: 1;
+
+        @include mq(sm) { display: block; }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+}

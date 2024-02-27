@@ -2,17 +2,13 @@
 <html lang="en">
     <head>
         <%- include('includes/components/head') %>
-        <title>Schedule App | Home Page</title>
+        <title>Schedule App | Sign-in Page</title>
     </head>
-    <body class="home">
+    <body class="signin">
         <%- include('includes/components/header'); %>
 
         <main class="main">
-            <% if(!user) { %>
-                <%- include('includes/layout/block-intro'); %>
-            <% } else { %>
-                <p> Welcome, <%- user.email %>! </p>
-            <% } %>
+            <%- include('includes/layout/block-signin') %>
         </main>
 
         <script src="js/bundle.js"></script>
