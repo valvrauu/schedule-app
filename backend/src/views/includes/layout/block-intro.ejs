@@ -1,17 +1,27 @@
 <section class="block-intro">
     <div class="block-intro__content">
-        <h1 class="primary-title">Schedule App</h1>
+        <% if (!user || contactList.length === 0) { %>
+            <h1 class="primary-title">
+                <%= !user ? 'Schedule App' : contactList.length === 0 ? 'Hello, ' + user.email : '' %>
+            </h1>
 
-        <p class="paragraph">
-            Welcome, please sign in or sign up!
-        </p>
+            <p class="paragraph">
+                <%= !user ? 'Welcome, please sign in or sign up!' : contactList.length === 0 ? 'Create your first contact!' : '' %>
+            </p>
+        <% } %>
+
+        <% if (user && contactList.length !== 0) { %>
+            <%- include('../components/contact-table'); %>
+        <% } %>
     </div>
 
-    <div class="block-intro__box-img">
-        <img 
-            src="imgs/timeline.svg" 
-            alt="" 
-            class="block-intro__img"
-        >
-    </div>
+    <% if(contactList.length === 0) { %>
+        <div class="block-intro__box-img">
+            <img 
+                src="imgs/timeline.svg" 
+                alt="" 
+                class="block-intro__img"
+            >
+        </div>
+    <% } %>
 </section>
