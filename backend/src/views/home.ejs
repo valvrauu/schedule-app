@@ -4,15 +4,11 @@
         <%- include('includes/components/head') %>
         <title>Schedule App | Home Page</title>
     </head>
-    <body class="home">
+    <body class="home <%- contactList.length !== 0 ? 'home--contacts' : '' %>">
         <%- include('includes/components/header'); %>
 
         <main class="main">
-            <% if(!user) { %>
-                <%- include('includes/layout/block-intro'); %>
-            <% } else { %>
-                <p> Welcome, <%- user.email %>! </p>
-            <% } %>
+            <%- include('includes/layout/block-intro'); %>
         </main>
 
         <script src="js/bundle.js"></script>
