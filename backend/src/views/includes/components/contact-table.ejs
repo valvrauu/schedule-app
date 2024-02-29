@@ -1,0 +1,30 @@
+<div class="responsive-table">
+    <table class="contact-table" id="contactTable">
+        <thead class="contact-table__head">
+            <tr class="contact-table__row">
+                <th class="contact-table__header">Name</th>
+                <th class="contact-table__header">Last Name</th>
+                <th class="contact-table__header">Email</th>
+                <th class="contact-table__header">Phone</th>
+                <th class="contact-table__header"></th>
+                <th class="contact-table__header"></th>
+            </tr>
+        </thead>
+        <tbody class="contact-table__body">
+            <% for (contact of contactList) { %>
+                <tr class="contact-table__row">
+                    <td class="contact-table__data"><%- contact.name %></td>
+                    <td class="contact-table__data"><%- contact.lastName %></td>
+                    <td class="contact-table__data"><%- contact.email %></td>
+                    <td class="contact-table__data"><%- contact.phone %></td>
+                    <td class="contact-table__data">
+                        <a class="contact-table__action contact-table__update" href="/contacts/update/<%- contact._id %>">Update</a>
+                    </td>
+                    <td class="contact-table__data">
+                        <a class="contact-table__action contact-table__delete" href="/contacts/delete/<%- contact._id %>">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
