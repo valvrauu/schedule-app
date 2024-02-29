@@ -3,7 +3,14 @@ exports.alerts = (req, res, next) => {
         email: req.flash('email'),
         password: req.flash('password'),
         repeatPassword: req.flash('repeatPassword'),
-        signup: req.flash('signup')
+        signup: req.flash('signup'),
+        contact: {
+            name: req.flash('cName'),
+            lastName: req.flash('cLastName'),
+            email: req.flash('cEmail'),
+            phone: req.flash('cPhone'),
+            status: req.flash('cStatus'),
+        }
     }
 
     next();
