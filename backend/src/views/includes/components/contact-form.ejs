@@ -1,0 +1,82 @@
+<form action="<%= !contact._id ? '/contacts/create' : '/contacts/update/' + contact._id %>" method="post" autocomplete="on" class="form form--contact" id="cForm">
+    <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+
+    <div class="form__group">
+        <label for="cName" class="form__label">Name</label>
+
+        <input 
+            type="text" 
+            name="cName" 
+            id="cName" 
+            class="form__input" 
+            value="<%- contact.name %>" 
+            placeholder=".e.g John" 
+            required
+        >
+
+        <% displayAlerts(alerts.contact.name); %>
+    </div>
+
+    <div class="form__group">
+        <label for="cLastName" class="form__label">Last name</label>
+
+        <input 
+            type="text" 
+            name="cLastName" 
+            id="cLastName" 
+            class="form__input" 
+            value="<%- contact.lastName %>" 
+            placeholder=".e.g Williams"
+        >
+
+        <% displayAlerts(alerts.contact.lastName); %>
+    </div>
+
+    <div class="form__group">
+        <label for="cEmail" class="form__label">Email</label>
+
+        <input 
+            type="email" 
+            name="cEmail" 
+            id="cEmail" 
+            class="form__input" 
+            value="<%- contact.email %>" 
+            placeholder=".e.g John@gmail.com"
+        >
+
+        <% displayAlerts(alerts.contact.email); %>
+    </div>
+
+    <div class="form__group">
+        <label for="cPhone" class="form__label">Phone</label>
+
+        <input 
+            type="tel" 
+            name="cPhone" 
+            id="cPhone" 
+            class="form__input" 
+            value="<%- contact.phone %>" 
+            placeholder="(xxx) xxx-xxxx"
+        >
+
+        <% displayAlerts(alerts.contact.phone); %>
+    </div>
+
+    <button class="btn btn--primary form__btn">
+        <%= !contact._id ? 'Create' : 'Edit' %>
+    </button>
+
+    <a href="/" class="btn btn--primary form__btn">
+        Back
+    </a>
+
+    <div class="form__alert form__alert--sucess">
+        <%- alerts.contact.status %>
+    </div>
+</form>
+
+<% function displayAlerts(alerts) {
+    alerts && alerts.forEach(error => { %>
+        <div class="form__alert form__alert--error"><%- error %></div>
+    <% });
+} %>
