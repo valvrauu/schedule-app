@@ -19,6 +19,7 @@ const { alerts, user } = require('./middlewares/flash');
 const home_routes = require('./routes/home');
 const signup_routes = require('./routes/signup');
 const signin_routes = require('./routes/signin');
+const contacts_routes = require('./routes/contacts');
 
 const sessionOptions = session({
     secret: process.env.SESSION_SECRET,
@@ -69,6 +70,7 @@ app.use(generateToken);
 app.use(home_routes);
 app.use(signup_routes);
 app.use(signin_routes);
+app.use(contacts_routes);
 
 app.on('ok', () => {
     app.listen(port, () => {
