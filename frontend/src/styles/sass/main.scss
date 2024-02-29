@@ -8,6 +8,7 @@
 @import 'components/btn';
 @import 'components/form';
 @import 'components/logo';
+@import 'components/contact-table';
 
 @import 'layout/header';
 @import 'layout/nav';
@@ -15,7 +16,9 @@
 @import 'layout/block-intro';
 @import 'layout/block-signup';
 @import 'layout/block-signin';
+@import 'layout/block-contacts';
 
 @import 'pages/home';
 @import 'pages/signup';
 @import 'pages/signin';
+@import 'pages/contacts';
