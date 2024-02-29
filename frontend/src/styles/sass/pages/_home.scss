@@ -1,3 +1,22 @@
 .home .main {
     @include center;
 }
+
+.home--contacts .main {
+    align-items: flex-start;
+}
+
+.home--contacts .block-intro {
+    max-width: 140rem;
+    width: 100%;
+
+    @include mq(sm) { width: 80%; }
+
+    &__content {
+        width: 100%;
+
+        & .responsive-table {
+            width: 100%;
+        }
+    }
+}

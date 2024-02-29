@@ -12,6 +12,13 @@
 
         --clr-error: hsl(0, 100%, 50%, 1);
         --clr-sucess: hsl(120, 100%, 50%, 1);
+
+        /* Contact Table  */
+            --clr-table-primary: hsl(211, 22%, 22%, 1); 
+            --clr-table-secondary: hsl(211, 23%, 18%, 1); 
+
+            --clr-update: var(--clr-primary-400);
+            --clr-delete: hsl(0, 100%, 50%, 1);
     /* Fonts */
         --fs-xsm: 1.2rem;
         --fs-sm: 1.4rem;

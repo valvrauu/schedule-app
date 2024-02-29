@@ -1,0 +1,17 @@
+<section class="block-contacts">
+    <div class="block-contacts__content">
+        <h1 class="primary-title block-contacts__primary-title">
+            <%= !contact._id ? 'Create contact' : 'Edit contact' %>
+        </h1>
+
+        <%- include('../components/contact-form'); %>
+    </div>
+
+    <div class="block-contacts__box-img">
+        <img 
+            src="/imgs/contact-illustration.svg" 
+            alt="" 
+            class="block-contacts__img"
+        >
+    </div>
+</section>
