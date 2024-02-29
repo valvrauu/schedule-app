@@ -1,0 +1,82 @@
+.responsive-table {
+    overflow-x: auto;
+}
+
+.contact-table {
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 1px;
+
+    background: var(--clr-table-primary);
+
+    &__head {
+        color: var(--clr-ntrl-min);
+        background: var(--clr-primary-100);
+
+        font-size: var(--fs-sm);
+
+        @include mq(sm) {
+            font-size: var(--fs-base);
+            font-weight: 700;
+        }
+    }
+
+    &__header {
+        padding: 1rem;
+
+        text-align: left;
+        text-wrap: nowrap;
+    }
+
+    &__body {
+        color: var(--clr-ntrl-min);
+        font-size: var(--fs-xsm);
+
+        @include mq(sm) { font-size: var(--fs-sm); }
+        @include mq(md) { font-size: var(--fs-base); }
+
+        & .contact-table__row:nth-child(even) {
+            background: var(--clr-table-secondary);
+        }
+    }
+
+    &__data {
+        border: 1px solid var(--clr-table-secondary);
+        padding: 1rem;
+
+        text-align: left;
+    }
+
+    &__action {
+        display: inline-block;
+        padding: .5rem;
+
+        color: inherit;
+        font-size: inherit;
+        text-decoration: none;
+
+        border-radius: 4px;
+        transition: filter 500ms;
+
+        @include mq(sm) { padding: .75rem; }
+    }
+
+    &__update {
+        background: var(--clr-update);
+
+        &:hover,
+        &:focus-within {
+            filter: contrast(50%);
+        }
+    }
+
+    &__delete {
+        background: var(--clr-delete);
+
+        &:hover,
+        &:focus-within {
+            filter: contrast(50%);
+        }
+    }
+}
