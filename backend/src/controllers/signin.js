@@ -1,4 +1,5 @@
 const { SignInClass } = require('../models/signin');
+const handleFormErrors = require('../utils/handleFormErrors');
 
 module.exports.index = (req, res, next) => {
     if(req.session.user) {
@@ -15,14 +16,9 @@ module.exports.submit = async (req, res, next) => {
         const signin = new SignInClass(req.body);
         await signin.enter();
 
-        const { errors } = signin;
-
-        if (Object.values(errors).every(prop => prop.length === 0)) {
+        if(!handleFormErrors(signin.errors, req)) {
             req.flash('signin', 'Sucess, logged into the account!')
             req.session.user = signin.user;
-        } else {
-            if(errors.email.length > 0) req.flash('email', errors.email);
-            if (errors.password.length > 0) req.flash('password', errors.password);
         }
 
         res.redirect('/signin');

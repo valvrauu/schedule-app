@@ -1,15 +1,6 @@
 const Contact = require('../models/contacts');
 const { authenticateUser } = require('../middlewares/user');
-
-const handleContactErrors = (req, contact) => {
-    const { errors } = contact;
-
-    for (const [key, value] of Object.entries(errors)) {
-        if (value.length > 0) {
-            req.flash(`c${key.charAt(0).toUpperCase() + key.slice(1)}`, value);
-        }
-    }
-}
+const handleFormErrors = require('../utils/handleFormErrors');
 
 exports.index = (req, res) => {
     try {
@@ -29,7 +20,7 @@ exports.create = async (req, res) => {
         await contact.create();
 
         if (!contact.details) {
-            handleContactErrors(req, contact);
+            handleFormErrors(contact.errors, req);
             res.redirect('/contacts');
             return;
         }
@@ -64,7 +55,7 @@ exports.update = async (req, res) => {
         await contact.updateById(reqID);
 
         if (!contact.details) {
-            handleContactErrors(req, contact);
+            handleFormErrors(contact.errors, req);
             res.redirect(`/contacts/update/${reqID}`);
             return;
         }
