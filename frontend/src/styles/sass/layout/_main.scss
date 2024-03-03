@@ -2,6 +2,8 @@
     flex: 1;
     padding: 4rem 2rem;
 
-    @include mq(sm) { padding: 6rem 0; }
-    @include mq(lg) { padding: 8rem 0; }
+    @include center;
+
+    @include mq(sm) { padding: 6rem; }
+    @include mq(lg) { padding: 8rem; }
 }
