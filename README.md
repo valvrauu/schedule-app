@@ -20,6 +20,12 @@ To set up the backend, navigate to the 'backend' folder using the following comm
 cd ./backend
 ```
 
+Install all dependencies:
+
+```bash
+npm install
+```
+
 Create a .env file in the 'backend' directory with the following environment variables:
 
 ```bash
