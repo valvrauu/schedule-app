@@ -20,6 +20,22 @@ To set up the backend, navigate to the 'backend' folder using the following comm
 cd ./backend
 ```
 
+Install all dependencies:
+
+```bash
+npm install
+```
+
+Create a .env file in the 'backend' directory with the following environment variables:
+
+```bash
+# MongoDB Connection String
+CONNECTION_STRING=your_mongodb_connection_string
+
+# Session Secret
+SESSION_SECRET=your_session_secret
+```
+
 Then, run the app.js file with nodemon to start the server:
 
 ```bash
