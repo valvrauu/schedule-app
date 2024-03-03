@@ -1,4 +1,5 @@
 const { SignUpClass } = require('../models/signup');
+const handleFormErrors = require('../utils/handleFormErrors');
 
 module.exports.index = (req, res, next) => {
     if(req.session.user) {
@@ -15,14 +16,8 @@ module.exports.submit = async (req, res, next) => {
         const signup = new SignUpClass(req.body);
         await signup.create();
 
-        const { errors } = signup;
-
-        if (Object.values(errors).every(prop => prop.length === 0)) { 
+        if(!handleFormErrors(signup.errors, req)) {
             req.flash('signup', 'Success, account created!');
-        } else {
-            if (errors.email.length > 0) req.flash('email', errors.email);
-            if (errors.password.length > 0) req.flash('password', errors.password);
-            if (errors.repeatPassword.length > 0) req.flash('repeatPassword', errors.repeatPassword);
         }
 
         res.redirect('/signup');
