@@ -1,6 +1,0 @@
-.signup .main {
-    @include center;
-
-    @include mq(sm) { padding: 6rem; }
-    @include mq(lg) { padding: 8rem; }
-}
